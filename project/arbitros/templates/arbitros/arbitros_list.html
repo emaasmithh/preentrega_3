@@ -6,7 +6,7 @@
 
 {% block content %}
     <form action="{% url 'arbitros:arbitros_list' %}" method="get">
-        <input type="text" name="busqueda" placeholder="Buscar...">
+        <input type="text" name="busqueda" placeholder="Buscar por nombre...">
     </form>
     <ul>
         {% for arbitro in arbitros %}

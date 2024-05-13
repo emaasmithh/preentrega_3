@@ -6,7 +6,7 @@
 
 {% block content %}
     <form action="{% url 'jugadores:jugadores_list' %}" method="get">
-        <input type="text" name="busqueda" placeholder="Buscar...">
+        <input type="text" name="busqueda" placeholder="Buscar por nombre...">
     </form>
     <ul>
         {% for jugador in jugadores %}
