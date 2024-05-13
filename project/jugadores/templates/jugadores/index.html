@@ -1,0 +1,7 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h1>JUGADORES</h1> 
+    <p><a href="{% url 'jugadores:jugadores_list' %}">Lista de jugadores</a></p>
+    <p><a href="{% url 'jugadores:jugadores_create' %}">Agregar Jugador</a></p>
+{% endblock content %}

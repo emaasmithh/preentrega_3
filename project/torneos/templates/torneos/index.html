@@ -1,0 +1,7 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h1>TORNEOS</h1> 
+    <p><a href="{% url 'torneos:torneos_list' %}">Lista de torneos</a></p>
+    <p><a href="{% url 'torneos:torneos_create' %}">Agregar torneo</a></p>
+{% endblock content %}

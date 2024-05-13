@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block body_title %}
+    <h1>Lista de Jugadores</h1>
+{% endblock body_title %}
+
+{% block content %}
+    <form action="{% url 'arbitros:arbitros_list' %}" method="get">
+        <input type="text" name="busqueda" placeholder="Buscar...">
+    </form>
+    <ul>
+        {% for arbitro in arbitros %}
+            <li><h3>{{ arbitro }}</h3></li>           
+        {% endfor %}
+    </ul>
+    
+{% endblock content %}

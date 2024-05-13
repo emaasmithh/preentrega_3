@@ -1,0 +1,7 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h1>ÁRBITROS</h1> 
+    <p><a href="{% url 'arbitros:arbitros_list' %}">Lista de árbitros</a></p>
+    <p><a href="{% url 'arbitros:arbitros_create' %}">Agregar Árbitro</a></p>
+{% endblock content %}
