@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from jugadores.models import Jugador
 from jugadores.forms import JugadorForm
+from django.db.models import Q
 
 
 def index(request):
@@ -10,7 +11,7 @@ def jugadores_list(request):
     busqueda = request.GET.get("busqueda", None)
     if busqueda:
         print(busqueda)
-        consulta = Jugador.objects.filter(nombre__icontains=busqueda)
+        consulta = Jugador.objects.filter(Q(nombre__icontains=busqueda) | Q(apellido__icontains=busqueda))
     else:
         consulta = Jugador.objects.all()   
     

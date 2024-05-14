@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from arbitros.models import Arbitro
 from arbitros.forms import ArbitroForm
+from django.db.models import Q
 
 def index(request):
     return render(request, "arbitros/index.html")
@@ -9,7 +10,7 @@ def arbitros_list(request):
     busqueda = request.GET.get("busqueda", None)
     if busqueda:
         print(busqueda)
-        consulta = Arbitro.objects.filter(nombre__icontains=busqueda)
+        consulta = Arbitro.objects.filter(Q(nombre__icontains=busqueda) | Q(apellido__icontains=busqueda))
     else:
         consulta = Arbitro.objects.all()   
     
