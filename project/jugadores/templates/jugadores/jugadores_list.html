@@ -12,6 +12,8 @@
         {% for jugador in jugadores %}
             <li><h3>{{ jugador }}</h3></li>
             <p>{{ jugador.posicion }}</p>
+            <a href="{% url 'jugadores:jugadores_detail' jugador.id %}"
+                                   class="btn btn-info btn-sm">Detalle</a>
         {% endfor %}
     </ul>
     

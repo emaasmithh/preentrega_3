@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from jugadores.models import Jugador
 from jugadores.forms import JugadorForm
 from django.db.models import Q
+from django.views.generic import DetailView
 
 
 def index(request):
@@ -27,3 +28,11 @@ def jugadores_create(request):
     else:  # GET
         form = JugadorForm()
     return render(request, "jugadores/jugadores_create.html", {"form": form})
+
+#class JugadorDetail(DetailView):
+#   model = Jugador
+
+def jugadores_detail(request, pk: int):
+    consulta = Jugador.objects.get(id=pk)
+    contexto = {"jugadores": consulta}
+    return render(request, "jugadores/jugadores_detail.html", contexto)

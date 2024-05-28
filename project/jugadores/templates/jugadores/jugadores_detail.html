@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block body_title %}
+    <h1>Detalle Jugador</h1>
+{% endblock body_title %}
+
+{% block content %}
+ 
+    <li>Nombre: {{ jugadores.nombre }}</li>
+    <li>Apellido: {{ jugadores.apellido }}</li>
+    <li>Posición: {{ jugadores.posicion }}</li>
+    <li>Nacimiento: {{ jugadores.fecha_nacimiento }}</li>
+    <li>Ranking: {{ jugadores.ranking }}</li>
+ 
+<div>
+    <a href="{% url 'jugadores:jugadores_list' %}">Volver</a>
+</div>     
+{% endblock content %}
