@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block body_title %}
+    <h1>Eliminar Jugador</h1>
+{% endblock body_title %}
+
+{% block content %}
+    <p class="fs-5  fst-italic ">¿Confirma eliminar "{{ object.nombre }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar</button>
+    </form>
+    <a href="{% url 'jugadores:index' %}">Volver al inicio de Jugador</a>
+{% endblock content %}

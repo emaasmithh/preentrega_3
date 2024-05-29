@@ -10,10 +10,11 @@
     </form>
     <ul>
         {% for jugador in jugadores %}
-            <li><h3>{{ jugador }}</h3></li>
-            <p>{{ jugador.posicion }}</p>
+            <li><h3>{{ jugador }}</h3></li>            
             <a href="{% url 'jugadores:jugadores_detail' jugador.id %}"
                                    class="btn btn-info btn-sm">Detalle</a>
+            <a href="{% url 'jugadores:jugadores_delete' jugador.id %}"
+                                   class="btn btn-info btn-sm">Borrar</a>
         {% endfor %}
     </ul>
     
