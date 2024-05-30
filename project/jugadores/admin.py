@@ -10,6 +10,7 @@ class JugadorAdmin(admin.ModelAdmin):
         "posicion",
         "fecha_nacimiento",
         "ranking",
+        "avatar",
     )
     list_display_links = ("nombre",)
     list_filter = ("ranking",)

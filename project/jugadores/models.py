@@ -7,6 +7,7 @@ class Jugador(models.Model):
     posicion = models.CharField(max_length=50, unique=False)
     fecha_nacimiento = models.DateField(null=True, blank=True)
     ranking = models.IntegerField(null=True, blank=True)
+    avatar = models.ImageField(upload_to="avatares", null=True, blank=True)   
 
     def __str__(self):
         return f"{self.apellido}, {self.nombre}"
