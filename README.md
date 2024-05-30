@@ -16,4 +16,6 @@ El proyecto tiene una base que saque de bootstrap y la modifique, luego cada apl
 
 Voy a filmar un video explicando y mostrando cómo funciona la página.
 
+A continuación dejo el link del video que lo guardé en google drive: https://drive.google.com/file/d/1i1ch88YSmpXIzWUem7GQakASZOxUFXX2/view?usp=sharing
+
 
