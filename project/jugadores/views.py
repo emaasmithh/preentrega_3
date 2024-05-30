@@ -27,7 +27,7 @@ def jugadores_create(request):
             return redirect("jugadores:jugadores_list")
     else:  # GET
         form = JugadorForm()
-    return render(request, "jugadores/jugadores_create.html", {"form": form})
+    return render(request, "jugadores/jugadores_form.html", {"form": form})
 
 #class JugadorDetail(DetailView):
 #   model = Jugador
