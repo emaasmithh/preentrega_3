@@ -1,8 +1,16 @@
 {% extends 'core/base.html' %}
 
+
+
+{% block body_title %}
+    {% if form.instance.pk %}
+        Jugadores: Edición
+    {% else %}
+        Jugadores: Creación
+    {% endif %}
+{% endblock body_title %}
+
 {% block content %}
-    <h2>Agregar jugador</h2>
-    
     <form method="post">
         {% csrf_token %}
         <table>

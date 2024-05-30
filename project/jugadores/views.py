@@ -44,3 +44,14 @@ def jugadores_delete(request, pk: int):
         consulta.delete()
         return redirect("jugadores:jugadores_list")
     return render(request, "jugadores/jugadores_confirm_delete.html", {"object": consulta})
+
+def jugadores_update(request, pk: int):
+    consulta = Jugador.objects.get(id=pk)
+    if request.method == "POST":
+        form = JugadorForm(request.POST, instance=consulta)
+        if form.is_valid():
+            form.save()
+            return redirect("jugadores:jugadores_list")
+    else:  # GET
+        form = JugadorForm(instance=consulta)
+    return render(request, "jugadores/jugadores_form.html", {"form": form})
