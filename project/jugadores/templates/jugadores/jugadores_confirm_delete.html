@@ -5,10 +5,20 @@
 {% endblock body_title %}
 
 {% block content %}
-    <p class="fs-5  fst-italic ">¿Confirma eliminar "{{ object.nombre }}"?</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Confirmar</button>
-    </form>
-    <a href="{% url 'jugadores:index' %}">Volver al inicio de Jugador</a>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <p class="fs-5 fst-italic">¿Confirma eliminar "{{ object.nombre }}"?</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Confirmar</button>
+                    </form>
+                    <a href="{% url 'jugadores:index' %}" class="btn btn-secondary mt-2">Volver al inicio de Jugador</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

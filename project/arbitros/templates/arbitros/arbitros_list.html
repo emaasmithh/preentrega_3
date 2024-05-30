@@ -1,17 +1,26 @@
 {% extends 'core/base.html' %}
 
 {% block body_title %}
-    <h1>Lista de Jugadores</h1>
+    <h1>Lista de Árbitros</h1>
 {% endblock body_title %}
 
 {% block content %}
-    <form action="{% url 'arbitros:arbitros_list' %}" method="get">
-        <input type="text" name="busqueda" placeholder="Buscar por nombre...">
-    </form>
-    <ul>
-        {% for arbitro in arbitros %}
-            <li><h3>{{ arbitro }}</h3></li>           
-        {% endfor %}
-    </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form action="{% url 'arbitros:arbitros_list' %}" method="get" class="mb-3">
+                <div class="input-group">
+                    <input type="text" name="busqueda" class="form-control" placeholder="Buscar por nombre...">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </form>
+            <ul class="list-group">
+                {% for arbitro in arbitros %}
+                    <li class="list-group-item"><h4>{{ arbitro }}</h4></li>           
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
     
 {% endblock content %}

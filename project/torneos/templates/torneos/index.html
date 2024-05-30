@@ -1,7 +1,19 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <h1>TORNEOS</h1> 
-    <p><a href="{% url 'torneos:torneos_list' %}">Lista de torneos</a></p>
-    <p><a href="{% url 'torneos:torneos_create' %}">Agregar torneo</a></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="text-center mb-4">TORNEOS</h1>
+                    <div class="text-center">
+                        <p><a href="{% url 'torneos:torneos_list' %}" class="btn btn-primary">Lista de torneos</a></p>
+                        <p><a href="{% url 'torneos:torneos_create' %}" class="btn btn-success">Agregar torneo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock content %}

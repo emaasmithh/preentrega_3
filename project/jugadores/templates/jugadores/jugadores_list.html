@@ -5,19 +5,30 @@
 {% endblock body_title %}
 
 {% block content %}
-    <form action="{% url 'jugadores:jugadores_list' %}" method="get">
-        <input type="text" name="busqueda" placeholder="Buscar por nombre...">
-    </form>
-    <ul>
-        {% for jugador in jugadores %}
-            <li><h3>{{ jugador }}</h3></li>            
-            <a href="{% url 'jugadores:jugadores_detail' jugador.id %}"
-                                   class="btn btn-info btn-sm">Detalle</a>
-            <a href="{% url 'jugadores:jugadores_update' jugador.id %}"
-                                   class="btn btn-info btn-sm">Editar</a>                       
-            <a href="{% url 'jugadores:jugadores_delete' jugador.id %}"
-                                   class="btn btn-info btn-sm">Borrar</a>
-        {% endfor %}
-    </ul>
+<form action="{% url 'jugadores:jugadores_list' %}" method="get">
+    <input type="text" name="busqueda" class="form-control" placeholder="Buscar por nombre...">
+</form>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for jugador in jugadores %}
+            <tr>
+                <td>{{ jugador }}</td>
+                <td>
+                    <a href="{% url 'jugadores:jugadores_detail' jugador.id %}" class="btn btn-info btn-sm">Detalle</a>
+                    <a href="{% url 'jugadores:jugadores_update' jugador.id %}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{% url 'jugadores:jugadores_delete' jugador.id %}" class="btn btn-danger btn-sm">Borrar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
     
 {% endblock content %}

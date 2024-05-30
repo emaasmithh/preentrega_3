@@ -5,13 +5,22 @@
 {% endblock body_title %}
 
 {% block content %}
-    <form action="{% url 'torneos:torneos_list' %}" method="get">
-        <input type="text" name="busqueda" placeholder="Buscar...">
-    </form>
-    <ul>
-        {% for torneo in torneos %}
-            <li><h3>{{ torneo }}</h3></li>            
-        {% endfor %}
-    </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form action="{% url 'torneos:torneos_list' %}" method="get" class="mb-3">
+                <div class="input-group">
+                    <input type="text" name="busqueda" class="form-control" placeholder="Buscar...">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </form>
+            <ul class="list-group">
+                {% for torneo in torneos %}
+                    <li class="list-group-item"><h4>{{ torneo }}</h4></li>            
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
     
 {% endblock content %}

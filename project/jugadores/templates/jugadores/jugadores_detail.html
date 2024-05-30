@@ -6,13 +6,25 @@
 
 {% block content %}
  
-    <li>Nombre: {{ jugadores.nombre }}</li>
-    <li>Apellido: {{ jugadores.apellido }}</li>
-    <li>Posición: {{ jugadores.posicion }}</li>
-    <li>Nacimiento: {{ jugadores.fecha_nacimiento }}</li>
-    <li>Ranking: {{ jugadores.ranking }}</li>
- 
-<div>
-    <a href="{% url 'jugadores:jugadores_list' %}">Volver</a>
-</div>     
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Detalles del Jugador</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Nombre:</strong> {{ jugadores.nombre }}</li>
+                        <li class="list-group-item"><strong>Apellido:</strong> {{ jugadores.apellido }}</li>
+                        <li class="list-group-item"><strong>Posición:</strong> {{ jugadores.posicion }}</li>
+                        <li class="list-group-item"><strong>Nacimiento:</strong> {{ jugadores.fecha_nacimiento }}</li>
+                        <li class="list-group-item"><strong>Ranking:</strong> {{ jugadores.ranking }}</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{% url 'jugadores:jugadores_list' %}" class="btn btn-primary">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
 {% endblock content %}
