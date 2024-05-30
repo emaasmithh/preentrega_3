@@ -2,16 +2,17 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="card">
-                <div class="card-body text-center">
-                    <h1 class="card-title">BIENVENIDOS A LA ASOCIACIÓN ARGENTINA DE PADEL</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+    <h1>BIENVENIDOS A LA ASOCIACIÓN ARGENTINA DE PADEL</h1>
+
+    {% if user.is_authenticated %}
+        <p class="text-info ">¡Bienvenido {{ user.username | title }}!</p>
+    {% endif %}
+        
+        <!-- Mensaje para cuando un vendedor sea creado -->
+    {% if mensaje %}
+        <p class="text-info ">{{ mensaje }} ¡Bienvenido!</p>
+    {% endif %}
+                
 
 {% endblock content %}
